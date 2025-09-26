@@ -10,7 +10,11 @@ include(CMakeFindDependencyMacro)
 include(GNUInstallDirs)
 # Directly include sentencepiece library
 set_and_check(TOKENIZERS_LIBDIR "@PACKAGE_CMAKE_INSTALL_LIBDIR@")
-set(SENTENCEPIECE_LIBRARY "${TOKENIZERS_LIBDIR}/libsentencepiece.a")
+if(WIN32)
+    set(SENTENCEPIECE_LIBRARY "${TOKENIZERS_LIBDIR}/libsentencepiece.lib")
+else()
+    set(SENTENCEPIECE_LIBRARY "${TOKENIZERS_LIBDIR}/libsentencepiece.a")
+endif()
 if(NOT EXISTS "${SENTENCEPIECE_LIBRARY}")
   message(
     FATAL_ERROR
