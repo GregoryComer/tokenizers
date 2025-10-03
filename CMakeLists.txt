@@ -28,9 +28,7 @@ include(CMakePackageConfigHelpers)
 include(Utils.cmake)
 
 # Ignore weak attribute warning
-if(NOT MSVC)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-attributes")
-endif()
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-attributes")
 
 set(ABSL_ENABLE_INSTALL ON)
 set(ABSL_PROPAGATE_CXX_STD ON)
@@ -51,7 +49,7 @@ endif()
 
 add_subdirectory(
   ${CMAKE_CURRENT_SOURCE_DIR}/third-party/sentencepiece
-  ${CMAKE_CURRENT_BINARY_DIR}/sp-build
+  ${CMAKE_CURRENT_BINARY_DIR}/sentencepiece-build
   EXCLUDE_FROM_ALL
 )
 
