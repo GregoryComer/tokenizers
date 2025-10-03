@@ -34,7 +34,3 @@ pip-out/
 *~
 .~lock.*
 *.idea
-
-*.so
-*.dylib
-*.pyd

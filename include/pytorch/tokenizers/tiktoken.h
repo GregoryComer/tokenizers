@@ -19,7 +19,6 @@
 
 // Local
 #include <pytorch/tokenizers/bpe_tokenizer_base.h>
-#include <pytorch/tokenizers/compiler.h>
 #include <pytorch/tokenizers/regex.h>
 #include <pytorch/tokenizers/result.h>
 #include <pytorch/tokenizers/tokenizer.h>
